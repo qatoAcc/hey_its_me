@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>hi :)</title>
+        <style>
+            html{
+                background: pink;
+            }
+            .text{
+            color: lightyellow;
+            }
+            .cap{
+                color: lightyellow;
+                background: pink;
+                border: 1px solid lightyellow;
+                font-weight: bolder;
+            }
+            .cap:hover{
+            background: lightyellow;
+            color: pink;
+            }
+            .center{
+                text-align: center;
+            }
+            .text{
+                text-align: center;
+            }
+            #typedtext{
+                font-family: 'Waiting for the Sunrise', cursive; 
+            font-size:30px; 
+            margin: 10px 50px; 
+            letter-spacing: 2px; 
+            font-weight: bolder;
+            color: lightyellow;
+            }
+            .sel{
+                background: pink;
+                color: white;
+                width: 25%;
+                font-weight: 520;
+                font-family: sans-serif;
+            }
+            .selopt{
+                text-align: center;
+                
+            }
+            .po{
+                color: white;
+                font-family: Brush Script MT;
+                font-size: 165%;
+            }
+        </style>
+    </head>
+    <body>
+     <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
+     
+    <div id="typedtext"></div>
+    
+    <div class = 'selopt'>
+    <select class = 'sel'>
+    <option>the entire message :o</option>
+    
+    <option>it's me - braden </option>
+
+<option>how have you guys been? </option>
+
+<option>good, probably :) </option>
+<option>-----------------</option>
+<option>i have a few things to say: </option>
+<option>-----------------</option>
+<option> (.1) im moving in like a week :> </option>
+<option>-----------------</option>
+<option>
+(.2) i have no idea how to ask friends to meet</option>
+<option>
+somewhere or come to a place or whatever because of my </option>
+<option>complete lack of social skills lmao (please help) </option>
+
+<option>------------------</option>
+<option>(.3) this follows with the last one, but like WHEN can i visit </option>
+
+<option>or meet somewhere or something where i can see you guys :D</option>
+<option>------------------</option>
+<option>
+(.4) when i do move, its not going to be like 'omg im</option> 
+<option>
+so sad bc im never going to see you guys ever</option>
+
+<option>again boohoo',</option>
+
+<option>i can visit (more often than you think).</option>
+<option>-------------------</option>
+<option>
+(.5) i feel like thiccy ricky is the name of a gay
+</option> 
+
+<option>male stripper (that one was a bit random)</option>
+    </select>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p class = 'po'>i miss u guys. ◊</p>
+    
+    <script>
+        // set up text to print, each item in array is new line
+var aText = new Array(
+"it's me - braden", 
+"how have you guys been?",
+"good, probably :)",
+"i have a few things to say:", 
+" (.1) im moving in like a week :>",
+"(.2) i have no idea how to ask friends to meet somewhere or come to a place or whatever because of my complete lack of social skills lmao (please help)",
+"(.3) this follows with the last one, but like WHEN can i visit or meet somewhere or something where i can see you guys :D",
+"(.4) when i do move, its not going to be like 'omg im so sad bc im never going to see you guys ever again boohoo', i can visit (more often than you think).",
+"(.5) i feel like thiccy ricky is the name of a gay male stripper"
+);
+var iSpeed = 88; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 8; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex+iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+    </script>
+    </body>
+</html>
